@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <Link to="/\" className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <FileText className="w-8 h-8 text-primary-600" />
                 <span className="ml-2 text-xl font-bold text-gray-900">
                   DocuRequest
