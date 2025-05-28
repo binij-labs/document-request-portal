@@ -3,7 +3,7 @@ import * as React from "react";
 import { Link, type PageProps } from "gatsby";
 import { Helmet } from "react-helmet";
 import Layout from "@/components/Layout";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle, Clock, FileText } from "lucide-react";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -38,6 +38,67 @@ const IndexPage: React.FC<PageProps> = () => {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-12 bg-white">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-900">How It Works</h2>
+            <p className="max-w-2xl mx-auto mt-4 text-lg text-gray-600">
+              Our simple 3-step process makes requesting documents quick and
+              hassle-free
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {/* Step 1 */}
+            <div className="p-6 transition-shadow duration-300 rounded-lg shadow-sm bg-gray-50 hover:shadow-md">
+              <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-primary-100 text-primary-600">
+                <FileText className="w-6 h-6" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold">Fill Your Details</h3>
+              <p className="text-gray-600">
+                Complete our simple form with your personal information and
+                specify which document you need.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="p-6 transition-shadow duration-300 rounded-lg shadow-sm bg-gray-50 hover:shadow-md">
+              <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-primary-100 text-primary-600">
+                <Clock className="w-6 h-6" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold">Track Your Request</h3>
+              <p className="text-gray-600">
+                Use your unique reference number to check the status of your
+                document request at any time.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="p-6 transition-shadow duration-300 rounded-lg shadow-sm bg-gray-50 hover:shadow-md">
+              <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-primary-100 text-primary-600">
+                <CheckCircle className="w-6 h-6" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold">Receive Document</h3>
+              <p className="text-gray-600">
+                Once processed, you'll be notified and can access your official
+                document securely online.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              to="/request/step1"
+              className="inline-flex items-center px-4 py-2 text-base font-medium transition-colors text-primary-600 hover:text-primary-800"
+            >
+              Start Your Document Request{" "}
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
           </div>
         </div>
       </section>
