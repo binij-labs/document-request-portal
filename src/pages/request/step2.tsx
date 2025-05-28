@@ -49,7 +49,7 @@ const Step2Page: React.FC = () => {
   const handleSubmit = (values: typeof documentInfo) => {
     updateDocumentInfo(values);
     setStep(2);
-    // navigate('/request/step3');
+    navigate('/request/step3');
   };
   
   const handleBack = () => {
@@ -76,7 +76,7 @@ const Step2Page: React.FC = () => {
             validateOnChange={true}
             validateOnBlur={true}
           >
-            {({ values, isValid, dirty }) => (
+            {({ values, isValid }) => (
               <Form className="space-y-4">
                 <SelectInput 
                   label="Document Type" 
