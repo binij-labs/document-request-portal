@@ -4,6 +4,7 @@ import { Link, type PageProps } from "gatsby";
 import { Helmet } from "react-helmet";
 import Layout from "@/components/Layout";
 import { ArrowRight, CheckCircle, Clock, FileText } from "lucide-react";
+import { documentTypes } from "@/constants";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -123,7 +124,51 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
       </section>
 
-      {/* Documents Available: TODO */}
+      {/* Documents Available */}
+      <section className="py-12 bg-gray-50">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Available Documents
+            </h2>
+            <p className="max-w-2xl mx-auto mt-4 text-lg text-gray-600">
+              We process a wide range of official documents to meet your needs
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {documentTypes.map((doc, index) => (
+              <div
+                key={index}
+                className="flex items-center p-4 transition-all duration-300 bg-white rounded-lg shadow-sm hover:shadow-md"
+              >
+                <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 mr-4 rounded-full bg-primary-50 text-primary-600">
+                  <FileText className="w-5 h-5" />
+                </div>
+                <span className="text-gray-800">{doc.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="p-6 mt-12 border rounded-lg bg-primary-50 border-primary-100">
+            <h3 className="mb-2 text-xl font-semibold text-primary-900">
+              Need a different document?
+            </h3>
+            <p className="mb-4 text-primary-700">
+              We can process many other types of documents not listed here.
+              Start your request and select "Other" from the document type
+              dropdown.
+            </p>
+            <Link
+              to="/request/step1"
+              className="inline-flex items-center font-medium text-primary-700 hover:text-primary-800"
+            >
+              Request another document type{" "}
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section : TODO */}
     </Layout>
