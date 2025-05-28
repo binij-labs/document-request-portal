@@ -83,7 +83,12 @@ const ReviewPage: React.FC = () => {
   const handleGeneratePDF = () => {
     if (!requestStatus) return;
 
-  
+    generateRequestSummaryPDF(
+      requestStatus.id,
+      personalInfo,
+      documentInfo,
+      currentDate
+    );
   };
 
   const handleViewStatus = () => {
