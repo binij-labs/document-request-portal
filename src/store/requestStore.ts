@@ -1,6 +1,5 @@
-
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 // Define types for our document request
 export interface PersonalInfo {
@@ -24,7 +23,7 @@ export interface FileInfo {
 
 export interface RequestStatus {
   id: string;
-  status: 'Pending' | 'Under Review' | 'Completed';
+  status: "Pending" | "Under Review" | "Completed";
   estimatedCompletionDate: string;
   submittedDate: string;
   notes?: string;
@@ -39,7 +38,7 @@ export interface RequestState {
   isSubmitting: boolean;
   isSubmitted: boolean;
   submissionError: string | null;
-  
+
   // Actions
   setStep: (step: number) => void;
   updatePersonalInfo: (info: Partial<PersonalInfo>) => void;
@@ -56,16 +55,16 @@ export interface RequestState {
 const initialState = {
   step: 0,
   personalInfo: {
-    fullName: '',
-    email: '',
-    phone: '',
+    fullName: "",
+    email: "",
+    phone: "",
   },
   documentInfo: {
-    type: '',
-    licenseNumber: '',
-    referenceNumber: '',
-    issueDate: '',
-    additionalInfo: '',
+    type: "",
+    licenseNumber: "",
+    referenceNumber: "",
+    issueDate: "",
+    additionalInfo: "",
   },
   fileInfo: {
     file: null,
@@ -82,45 +81,42 @@ export const useRequestStore = create<RequestState>()(
   persist(
     (set) => ({
       ...initialState,
-      
+
       setStep: (step) => set({ step }),
-      
-      updatePersonalInfo: (info) => 
-        set((state) => ({ 
-          personalInfo: { ...state.personalInfo, ...info } 
+
+      updatePersonalInfo: (info) =>
+        set((state) => ({
+          personalInfo: { ...state.personalInfo, ...info },
         })),
-      
-      updateDocumentInfo: (info) => 
-        set((state) => ({ 
-          documentInfo: { ...state.documentInfo, ...info } 
+
+      updateDocumentInfo: (info) =>
+        set((state) => ({
+          documentInfo: { ...state.documentInfo, ...info },
         })),
-      
-      updateFileInfo: (info) => 
-        set((state) => ({ 
-          fileInfo: { ...state.fileInfo, ...info } 
+
+      updateFileInfo: (info) =>
+        set((state) => ({
+          fileInfo: { ...state.fileInfo, ...info },
         })),
-      
-      setRequestStatus: (status) => 
-        set({ requestStatus: status }),
-      
-      resetRequest: () => 
-        set({ 
+
+      setRequestStatus: (status) => set({ requestStatus: status }),
+
+      resetRequest: () =>
+        set({
           ...initialState,
           // We don't reset the request status
-          requestStatus: null
+          requestStatus: null,
         }),
-      
-      setIsSubmitting: (isSubmitting) => 
-        set({ isSubmitting }),
-      
-      setIsSubmitted: (isSubmitted) => 
-        set({ isSubmitted }),
-      
-      setSubmissionError: (submissionError) => 
-        set({ submissionError }),
+
+      setIsSubmitting: (isSubmitting) => set({ isSubmitting }),
+
+      setIsSubmitted: (isSubmitted) => set({ isSubmitted }),
+
+      setSubmissionError: (submissionError) => set({ submissionError }),
     }),
+
     {
-      name: 'document-request-store',
+      name: "document-request-store",
     }
   )
 );
