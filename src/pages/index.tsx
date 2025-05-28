@@ -170,7 +170,23 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
       </section>
 
-      {/* CTA Section : TODO */}
+      {/* CTA Section */}
+      <section className="py-12 text-white bg-primary-700">
+        <div className="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
+          <h2 className="mb-4 text-3xl font-bold">Ready to Get Started?</h2>
+          <p className="max-w-2xl mx-auto mb-8 text-primary-100">
+            Request your official documents today. Our secure platform makes the
+            process simple and efficient.
+          </p>
+          <Link
+            to="/request/step1"
+            className="inline-flex items-center px-6 py-3 text-base font-medium transition-colors duration-200 bg-white border border-transparent rounded-md shadow-sm text-primary-700 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-700 focus:ring-white"
+          >
+            Start Your Request
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
+        </div>
+      </section>
     </Layout>
   );
 };
