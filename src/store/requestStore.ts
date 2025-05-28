@@ -1,7 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+// import { persist } from "zustand/middleware";
 
-// Define types for our document request
 export interface PersonalInfo {
   fullName: string;
   email: string;
@@ -78,7 +77,7 @@ const initialState = {
 
 // Create store with persistence
 export const useRequestStore = create<RequestState>()(
-  persist(
+  // persist(
     (set) => ({
       ...initialState,
 
@@ -114,9 +113,8 @@ export const useRequestStore = create<RequestState>()(
 
       setSubmissionError: (submissionError) => set({ submissionError }),
     }),
-
-    {
-      name: "document-request-store",
-    }
-  )
+    // {
+    //   name: "document-request-store",
+    // }
+  // )
 );
