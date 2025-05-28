@@ -7,7 +7,7 @@ const config: GatsbyConfig = {
     description: `A professional document request portal`,
   },
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-postcss"],
+  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-tsconfig-paths"],
 };
 
 export default config;
