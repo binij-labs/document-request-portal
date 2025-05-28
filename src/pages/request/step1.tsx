@@ -8,7 +8,7 @@ import TextInput from "@/components/atoms/TextInput";
 import { useRequestStore } from "@/store/requestStore";
 import { z } from "zod";
 import { toFormikValidationSchema } from 'zod-formik-adapter';
-import { requestSteps } from "@/constants/requestSteps";
+import { requestSteps } from "@/constants";
 
 const Step1Page: React.FC = () => {
   const { personalInfo, updatePersonalInfo, setStep } = useRequestStore();
@@ -27,7 +27,7 @@ const Step1Page: React.FC = () => {
       ),
   });
 
-  const handleSubmit = (values: any) => {
+  const handleSubmit = (values: typeof personalInfo) => {
     updatePersonalInfo(values);
     setStep(1);
     navigate("/request/step2");
@@ -50,7 +50,7 @@ const Step1Page: React.FC = () => {
             initialValues={personalInfo}
             validationSchema={toFormikValidationSchema(validationSchema)}
             onSubmit={handleSubmit}
-            validateOnMount={false}
+             validateOnMount={false}
             validateOnChange={true}
             validateOnBlur={true}
           >
@@ -89,9 +89,9 @@ const Step1Page: React.FC = () => {
 
                   <button
                     type="submit"
-                    disabled={!(isValid && dirty)}
+                    disabled={!(isValid)}
                     className={`btn-primary ${
-                      !(isValid && dirty) ? "opacity-50 cursor-not-allowed" : ""
+                      !(isValid) ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                   >
                     Continue to Document Type
