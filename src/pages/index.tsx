@@ -38,6 +38,26 @@ const IndexPage: React.FC<PageProps> = () => {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </div>
+            <div className="hidden mt-10 md:block md:w-1/2 md:mt-0 animate-slide-up">
+              <div className="relative h-64 md:h-96">
+                <div className="absolute inset-0 transform bg-white rounded-lg shadow-2xl -rotate-6 opacity-20"></div>
+                <div className="absolute inset-0 transform bg-white rounded-lg shadow-2xl rotate-3 opacity-20"></div>
+                <div className="absolute inset-0 transform bg-white rounded-lg shadow-2xl rotate-1 opacity-20"></div>
+                <div className="absolute inset-0 bg-white rounded-lg shadow-xl">
+                  <div className="p-6">
+                    <div className="w-1/4 h-4 mb-4 rounded bg-primary-200"></div>
+                    <div className="w-3/4 h-4 mb-4 rounded bg-primary-200"></div>
+                    <div className="w-1/2 h-4 mb-6 rounded bg-primary-200"></div>
+
+                    <div className="w-full h-10 mb-4 rounded-md bg-primary-100"></div>
+                    <div className="w-full h-10 mb-4 rounded-md bg-primary-100"></div>
+                    <div className="w-full h-10 mb-4 rounded-md bg-primary-100"></div>
+
+                    <div className="w-1/3 h-12 mx-auto mt-8 rounded-md bg-primary-300"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -102,6 +122,10 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
         </div>
       </section>
+
+      {/* Documents Available: TODO */}
+
+      {/* CTA Section : TODO */}
     </Layout>
   );
 };
