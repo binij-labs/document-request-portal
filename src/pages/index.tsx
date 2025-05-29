@@ -1,4 +1,3 @@
-import "../styles/global.css";
 import * as React from "react";
 import { Link, type PageProps } from "gatsby";
 import { Helmet } from "react-helmet";

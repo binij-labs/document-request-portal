@@ -10,4 +10,4 @@ const config: GatsbyConfig = {
   plugins: ["gatsby-plugin-postcss", "gatsby-plugin-tsconfig-paths"],
 };
 
-export default config;
+export default config;  
